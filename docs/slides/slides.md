@@ -10,7 +10,6 @@
 % contact: Steven Bird's <a href="https://github.com/nltk">nltk</a>
 % contact: Mike Bostock's <a href="http://d3js.org">D3</a>
 % favicon: http://hobson.github.io/pycon2015-nlp-tutorial/favicon.ico
-http://hobson.github.io/analytics-summit-2015/favicon.ico
 
 ---
 title: Audience Survey
