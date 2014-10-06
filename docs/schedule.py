@@ -6,8 +6,11 @@ import re
 import collections
 RE_TIME = re.compile(r'([^(]*)\(\s*(\d+)\s*(?:min)?\s*\)([^(]*)', re.IGNORECASE)
 
-def schedule(path='outline.md'):
+def schedule(path=None):
     """Process an outline in Markdown format, extracting the time estimates for each line"""
+
+    if not path:
+        path = 'outline.md'
 
     sections, parent, i, section_num = collections.OrderedDict(), 0, 1, 1
     with open(path, 'r') as f:
@@ -57,8 +60,8 @@ def generate_markdown(sections):
 
 
 def print_markdown(sections):
-    if not sections or ( isinstance(sections, basestring) and os.path.isfile(sections)):
-        sections = schedule(path)
+    if not sections or (isinstance(sections, basestring) and os.path.isfile(sections)):
+        sections = schedule(sections)
     for slide in generate_markdown(sections):
         print slide
 
@@ -75,6 +78,9 @@ def total_time(sections):
 
 if __name__ == '__main__':
     sections = schedule()
+    num_bullets = len(sections)
     print_markdown(sections)
-    print '---\ntitle: Metadata\n\n* Time: {0} hr\n* Bullets: {1}\n* Slides: {1}\n'.format(total_time(sections) / 60., len(sections), len(s for s in sections if s.get('name', None)))
-
+    print '---\ntitle: Metadata\n\n* Time: {0} hr\n* Bullets: {1}\n* Slides: {2}\n'.format(
+        total_time(sections) / 60.,
+        num_bullets,
+        len([s for s in sections.values() if s.get('name', None)]))

@@ -260,8 +260,6 @@ title: Semantic processing
 * 2. analyze and visualize the semantic network for the participant-supplied text
 * 3. use NLTK to populate a simple knowledge base about you based on your hard drive contents
 
-
-
 ---
 title: Contributors
 

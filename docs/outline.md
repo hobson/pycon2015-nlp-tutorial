@@ -65,9 +65,10 @@
          * vocabulary statistics relative to "standard vocabularies" or age-group vocabularies from education material
          * vacabulary evolution over the course of a document
          * structure (vocabulary shifts within a document for each of the context layers discussed previously) 
-       
-6. (10 min) Coffee break
-    1. Will help those having trouble getting the examples so far to work in their environment
+
+-- (10 min) Coffee Break ---
+
+    * Will help those having trouble getting the examples so far to work in their environment
 
 7. (14 min) Acquiring a Corpus
     1. using `nltk` to download text corpora (text documents or strings)
@@ -139,7 +140,7 @@
         - example use in a chatbot (`will`)
         - when you want the very "best match" and you can wait
 
--- 10 min break ---
+-- (10 min) Coffee Break ---
 
 10. (15 min) Jargon and typo consolidation
      - Tell a story about the need for word consolidation (vocab dimension reduction) at Sharp Electronics to interpret multilingual, jargony, and abbreviation-filled natural language repair technician notes
@@ -159,7 +160,7 @@
      2. state of the art in semantic parsing of sentences
      3. word order to tag words with POS and context
 
--- Coffee Break --
+-- (10 min) Coffee Break ---
 
 11. (15 min) Knowledge extraction
     1. date/time information using python-dateutil
