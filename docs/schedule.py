@@ -55,17 +55,27 @@ def schedule(path=None):
 
 
 def generate_markdown(sections):
+    parent, parent_i = '', 0
     for i, section in sections.iteritems():
+        slide = ''
         if section.get('name', None):
             section['name'] = section['name'][0].upper() + section['name'][1:]
-            slide = '\n---\n'
+            slide += '\n---\n'
             slide += 'title: {0}\n'.format(section['name'])
-            if section.get('time', None):
-                slide += 'footer: ({0} min)\n'.format(section['time'])
+            parent = section
+            parent_i = i
+            # if section.get('time', None):
+            #     slide += 'footer: ({0} min)\n'.format(section['time'])
         else:
+            #print section['line']
             stripped_line = RE_LIST_BULLET.sub('', section['line'].strip())
+            #print stripped_line
             if stripped_line:
-                slide = '* ' + stripped_line 
+                if i - parent_i > 8:
+                    slide += '\n---\n'
+                    slide += 'title: {0} (cont.)\n'.format(parent['name'])
+                    parent_i = i
+                slide += '* ' + stripped_line + '\n'
         yield slide
 
 
