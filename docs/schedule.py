@@ -2,14 +2,14 @@
 # schedule.py
 
 import os.path
-import re
 import collections
 import math
 
 from pug.nlp import util
 
+from pug.nlp.regex_patterns import parenthetical_time as RE_TIME
+from pug.nlp.regex_patterns import list_bullet as RE_LIST_BULLET
 
-RE_TIME = re.compile(r'([^(]*)\(\s*(\d+)\s*(?:min)?\s*\)([^(]*)', re.IGNORECASE)
 
 def schedule(path=None):
     """Process an outline in Markdown format, extracting the time estimates for each line"""
@@ -53,6 +53,7 @@ def schedule(path=None):
     return sections
 
 
+
 def generate_markdown(sections):
     for i, section in sections.iteritems():
         if section.get('name', None):
@@ -62,7 +63,9 @@ def generate_markdown(sections):
             if section.get('time', None):
                 slide += 'footer: ({0} min)\n'.format(section['time'])
         else:
-            slide = '* ' + section['line'].strip()
+            stripped_line = RE_LIST_BULLET.sub('', section['line'].strip())
+            if stripped_line:
+                slide = '* ' + stripped_line 
         yield slide
 
 
