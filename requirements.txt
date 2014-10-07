@@ -31,6 +31,9 @@ nltk==3.0.0  # requires python 2.6-2.7 or 3.2+
 
 
 # `pug` dependencies
+python-dateutil==2.2
+pytz==2014.7
+progressbar==2.2
 queuelib==1.1.1
 tabulate==0.7.1
 w3lib==1.5

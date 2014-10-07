@@ -4,6 +4,11 @@
 import os.path
 import re
 import collections
+import math
+
+from pug.nlp import util
+
+
 RE_TIME = re.compile(r'([^(]*)\(\s*(\d+)\s*(?:min)?\s*\)([^(]*)', re.IGNORECASE)
 
 def schedule(path=None):
@@ -54,9 +59,12 @@ def generate_markdown(sections):
             section['name'] = section['name'][0].upper() + section['name'][1:]
             slide = '\n---\n'
             slide += 'title: {0}\n'.format(section['name'])
-            yield slide
+            if section.get('time', None):
+                slide += 'footer: ({0} min)\n'.format(section['time'])
         else:
-            yield '* ' + section['line'].strip()
+            slide = '* ' + section['line'].strip()
+        yield slide
+
 
 
 def print_markdown(sections):
@@ -79,8 +87,13 @@ def total_time(sections):
 if __name__ == '__main__':
     sections = schedule()
     num_bullets = len(sections)
-    print_markdown(sections)
-    print '---\ntitle: Metadata\n\n* Time: {0} hr\n* Bullets: {1}\n* Slides: {2}\n'.format(
-        total_time(sections) / 60.,
-        num_bullets,
-        len([s for s in sections.values() if s.get('name', None)]))
+    md = ''
+    for slide in generate_markdown(sections):
+        md += slide
+
+    stats = util.markdown_stats(md)
+    stats['time'] = '{0:d}:{1:02d}'.format(int(math.floor(total_time(sections) / 60.)), int(total_time(sections) % 60))
+    print md
+    print '---\ntitle: Metadata\n\n'
+    for k, v in stats.iteritems():
+        print '* {0}: {1}'.format(k.capitalize(), v)
