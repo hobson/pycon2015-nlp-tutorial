@@ -61,7 +61,7 @@ def generate_markdown(sections):
         if section.get('name', None):
             section['name'] = section['name'][0].upper() + section['name'][1:]
             slide += '\n---\n'
-            slide += 'title: {0}\n'.format(section['name'])
+            slide += 'title: {0}\n\n'.format(section['name'])
             parent = section
             parent_i = i
             # if section.get('time', None):
@@ -73,7 +73,7 @@ def generate_markdown(sections):
             if stripped_line:
                 if i - parent_i > 8:
                     slide += '\n---\n'
-                    slide += 'title: {0} (cont.)\n'.format(parent['name'])
+                    slide += 'title: {0} (cont.)\n\n'.format(parent['name'])
                     parent_i = i
                 slide += '* ' + stripped_line + '\n'
         yield slide

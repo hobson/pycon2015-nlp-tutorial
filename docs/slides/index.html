@@ -102,7 +102,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>What is natural language</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>a system of utterances invented by humans "spontaneously" over millions of years.</li>
+<li>unstructured text is a generalization of natural language text and the terms are often used interchangeably</li>
+<li>natural language is often embedded in structure text (formal languages), like HTML, XML, YAML, SQL, and of course Python as the content of variables, elements, or strings</li>
+<li>Examples (why NLP is challenging):</li>
+<li>HTML tag contents, e.g. the "PyCon 2015..." in <title>PyCon 2015 in Montréal | April 8th – April 16th</title></li>
+<li>A textbook, encyclopedia or Wikipedia articles with headings, page numbers, footnotes, etc</li>
+<li>A social network feed (twitter, facebook, ), e.g. "Brushed my teeth today"</li>
+<li>A legal contract, license agreement (EULA), annual report, patent "By checking this box you sign away your rights to sue us."</li>
+</ul></article>
  
 </slide>
 
@@ -112,7 +121,17 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>What is natural language (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Notes to yourself: "Don't forget to take Plato for a walk"</li>
+<li>Chat room correspondence: "OMG dont be sucha troll!!!"</li>
+<li>Numbers and prices (e.g. "200 pythonistas", "$50K per year", "1 GB")</li>
+<li>Nonexamples</li>
+<li>HTML and CSS tags</li>
+<li>python script (but some strings within it may be NL)</li>
+<li>A CSV file (but some strings within the fields may be NL)</li>
+<li>mathematical equations (but the integers and fractions within it can be processed as NL)</li>
+<li>a database (but the names of the fields and tables may be processed as NL)</li>
+</ul></article>
  
 </slide>
 
@@ -122,7 +141,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>What is natural language processing</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Computer processing of languages to do something useful or fun</li>
+<li>Story about the genesis of <em>information theory</em> and introduction to concepts Applicable to NLP:</li>
+<li>entropy</li>
+<li>coding</li>
+<li>decoding</li>
+<li>compression</li>
+<li>encryption</li>
+<li>channel capacity</li>
+</ul></article>
  
 </slide>
 
@@ -132,7 +160,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Why is natural language processing useful and fun</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Example applications</li>
+<li>a. sentiment analysis of customer service data (SAP)</li>
+<li>b. sentiment analysis for trend and finance prediction on twitter and other news feeds (Thomson Reuters)</li>
+<li>Reuters provides a low-latency feed to hedge funds containing a single bit associated with a stock symbol -- positive or negative impact on price</li>
+<li>c. hardware performance trends based on technician inspection comments (Sharp Electronics Corporation)</li>
+<li>d. enable artificial intelligence agents to train/teach themselves (CMU's NELL)</li>
+<li>e. data migration (ETL) between bodies of structured text like CSV, HTML tables to save the planet (DOE and Building Energy)</li>
+<li>f. example processing of memoirs for psychoanalysis: Stephen Fry's autobiography and its <a href="http://yourfry.com/">open API + metadata</a></li>
+</ul></article>
  
 </slide>
 
@@ -142,7 +179,11 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>What does artificial intelligence have to do with NLP</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Turing defined it as being able to imitate a human's ability to converse in  natural language text</li>
+<li>In some ways coding languages, structured text, and data structures, are just a subset or specialization of natural languages (because they are meant to be written and read by humans <em>AND</em> machines)</li>
+<li>semantic processing (state of the art NLP) extracts knowledge or meaning from text</li>
+</ul></article>
  
 </slide>
 
@@ -152,7 +193,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Context:</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>what is context</li>
+<li>why is it important?</li>
+<li>Some common layers of context and meaning</li>
+<li>word (the "meaning" of syllables depends on the word they are used in)</li>
+<li>compound word ("boot" means something different in "bootstrap" and "boot up")</li>
+<li>phrase (noun-phrases are particularly "atomic")</li>
+<li>sentence (a sentence can often be presumed to have some grammatically-required elements like a noun and a verb)</li>
+<li>paragraph (paragraphs often have an intro, body, conclusion with different word usage assumptions)</li>
+</ul></article>
  
 </slide>
 
@@ -162,7 +212,17 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Context: (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>passage (quotes, excerpts)</li>
+<li>page (text often will refer to images or quotes on the same page, like "see above")</li>
+<li>section (topics are changed between sections of an article or book)</li>
+<li>chapter (authors change viewpoint/location/subject between chapters)</li>
+<li>book (terms and symbols used in a dictionary may only be relevant there)</li>
+<li>corpus (a subset of language usages will always have sample biases)</li>
+<li>language ("taco" means something different in English than in Spanish)</li>
+<li>tribe/city/region ("Zoobombing" means something completely different in Portland than in a war zone)</li>
+<li>nation (culture)</li>
+</ul></article>
  
 </slide>
 
@@ -172,7 +232,9 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Context: (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>planet (yes, projects like SETI are very concerned with NLP of ET languages)</li>
+</ul></article>
  
 </slide>
 
@@ -182,7 +244,15 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Tools and techniques for identifying "style" or "context"</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Sentiment and mood metrics</li>
+<li>Style distance metrics for comparison of a text to that of famous authors like Hemmingway, Shakespeare, US presidents,</li>
+<li>Techniques</li>
+<li>vocabulary breadth</li>
+<li>vocabulary statistics relative to "standard vocabularies" or age-group vocabularies from education material</li>
+<li>vacabulary evolution over the course of a document</li>
+<li>structure (vocabulary shifts within a document for each of the context layers discussed previously)</li>
+</ul></article>
  
 </slide>
 
@@ -192,7 +262,9 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Break</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Will help those having trouble getting the examples so far to work in their environment</li>
+</ul></article>
  
 </slide>
 
@@ -202,7 +274,14 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Acquiring a Corpus</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>using <code>nltk</code> to download text corpora (text documents or strings)</li>
+<li>extracting text and semi-structure text (tables) from web pages using Scrapy and Beautiful Soup</li>
+<li>encoding issues and python 2 vs 3: what has changed and how to use the best of python 3 with python 2 NLP tools</li>
+<li><code>unicode()</code> vs <code>str()</code> vs <code>repr()</code></li>
+<li><code>from __future__ import unicode_literals</code></li>
+<li>check user-supplied corpus  with some common tools for "quantifying" and structuring unstructured text</li>
+</ul></article>
  
 </slide>
 
@@ -212,7 +291,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Frequency analysis of US President inaugural speeches</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>segmentation/tokenization/parsing</li>
+<li>characters (encoding issues, some natural languages like Japanese Kanji and Chinese don't have "letters")</li>
+<li>words</li>
+<li>digits and symbols and unicode as part of words</li>
+<li>punctuation at the end of sentences and word</li>
+<li>hyphenation</li>
+<li>typos</li>
+<li>spelling variations (British English)</li>
+</ul></article>
  
 </slide>
 
@@ -222,7 +310,17 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Frequency analysis of US President inaugural speeches (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>language variations (Spanish, French, slang)</li>
+<li>bag-of-words counting (frequency analysis) ignores context at any layer above the "documents"</li>
+<li>agnostic counting</li>
+<li>stemming</li>
+<li>nltk stemmers</li>
+<li>counting</li>
+<li>Data structures like <code>collections.Counter</code> that discard context/order</li>
+<li>Can <code>collections.OrderedDict</code> be used to preserve context and order? (not easily)</li>
+<li>normalization of counts/frequencies/probabilities</li>
+</ul></article>
  
 </slide>
 
@@ -232,7 +330,17 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Frequency analysis of US President inaugural speeches (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>occurrence matrices ("word space" or "word vector space" in information theory)</li>
+<li>uses for word-word, word-document, document-word, and document-document matrices</li>
+<li>"word space" is a way of giving words a distance metric, from each other as individuals and as collections of words (documents)</li>
+<li>Leventshtein distance</li>
+<li>Distance</li>
+<li>statistical (frequency) word space</li>
+<li>nltk.metrics.distance.jaccard_distance</li>
+<li>nltk.metrics.distance.masi_distance</li>
+<li>nltk.metrics.distance.presence</li>
+</ul></article>
  
 </slide>
 
@@ -242,7 +350,15 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Frequency analysis of US President inaugural speeches (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>direct semantic word space (we'll talk about WordNet later)</li>
+<li>syntactic/gramatical word space (we'll talk about POS tagging later)</li>
+<li>statistical nltk distance measures/metrics:</li>
+<li>complexity/entropy/information measures for unstructured text</li>
+<li>a. compression ratio</li>
+<li>b. entropy</li>
+<li>c. predictability (human trials by Claude Shannon et al.)</li>
+</ul></article>
  
 </slide>
 
@@ -252,7 +368,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Dimension reduction</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>occurrence matrices will grow to become impractical</li>
+<li>100k words/tokens counted across 10k documents = 1 GB of data, if stored efficiently</li>
+<li>ignoring "stop words" and low-information-content words won't significantly reduce the dimensions</li>
+<li>many machine learning algorithms are impractical at this scale:</li>
+<li>decision trees</li>
+<li>KNN</li>
+<li>K-means</li>
+<li>Support vector machines</li>
+</ul></article>
  
 </slide>
 
@@ -262,7 +387,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Dimension reduction (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>SVD (PCA) can reduce the dimensions and enable many powerful machine learning algorithms to be employed</li>
+<li>When SVD is impractical (e.g. 100k x 100k matrices or larger), dimension reduction can be based on the entropy found in each word and document independent of the others</li>
+<li>ntlk US inaugural presidential speech word-frequency example</li>
+<li>raw occurrence matrices</li>
+<li>reduced-dimension occurrence matrices</li>
+<li>d3 visualizations of occurrence matrices</li>
+<li>as "checkerboard" grids or heat-maps</li>
+<li>as graphs or networks (D3 force-directed graph)</li>
+</ul></article>
  
 </slide>
 
@@ -272,7 +406,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Getting Fuzzy</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>regular expressions</li>
+<li>examples for use in a chat bot</li>
+<li>examples for use in a crawler for financial information</li>
+<li>what they're good at (semi-structured text) and what their not good for (not robust/reliable)</li>
+<li>fuzzywuzzy (uses "quick" Levenshtein distance)</li>
+<li>examples for matching database table/column names</li>
+<li>when you need the "best" match and you need it fast</li>
+<li>fuzzy regular expressions (<code>regex</code> package)</li>
+</ul></article>
  
 </slide>
 
@@ -282,7 +425,10 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Getting Fuzzy (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>example use in a chatbot (<code>will</code>)</li>
+<li>when you want the very "best match" and you can wait</li>
+</ul></article>
  
 </slide>
 
@@ -302,7 +448,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Jargon and typo consolidation</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Tell a story about the need for word consolidation (vocab dimension reduction) at Sharp Electronics to interpret multilingual, jargony, and abbreviation-filled natural language repair technician notes</li>
+<li>word distance metrics (Levenshtein)</li>
+<li>which word is the "canonical" form among a list of typos</li>
+<li>sorting by frequency</li>
+<li>sorting by word length</li>
+<li>iterative loosening of fuzziness threshold</li>
+<li>use of dictionaries and word graphs (WordNet, ConceptNet) to find the "root" of a word</li>
+<li>example usages o</li>
+</ul></article>
  
 </slide>
 
@@ -312,7 +467,11 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Parsing structured data to create small , context-specific databases of knowledge for use in NLP information extraction from unstructured text</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>extracting tabular data automatically from a web page (using Scrapy)</li>
+<li>automatic-identification of table "schema" using frequency analysis</li>
+<li>parsing a natural language database table query and producing a natural language response (i.e. how Wolfram Alpha does it)</li>
+</ul></article>
  
 </slide>
 
@@ -322,7 +481,11 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Natural language processing of search queries</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>composing logical statements from natural language</li>
+<li>state of the art in semantic parsing of sentences</li>
+<li>word order to tag words with POS and context</li>
+</ul></article>
  
 </slide>
 
@@ -342,7 +505,11 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Knowledge extraction</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>date/time information using python-dateutil</li>
+<li><code>will</code> example "remind me to knock off at 5"</li>
+<li>regexes to extract prices</li>
+</ul></article>
  
 </slide>
 
@@ -352,7 +519,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Sentiment analysis to gage chat room "mood"</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Applications of sentiment analysis</li>
+<li>financial analytic forecasting</li>
+<li>social network research and traffic/mood manipulation</li>
+<li>advertising</li>
+<li>consumer feedback processing</li>
+<li>movie, music, book review processing and triage</li>
+<li>will` chatbot example using nltk</li>
+<li>gage the mood and civility of your chat room</li>
+</ul></article>
  
 </slide>
 
@@ -362,7 +538,10 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Sentiment analysis to gage chat room "mood" (cont.)</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>long term "culture" tracking</li>
+<li>identifying the mood of individual chatroom members</li>
+</ul></article>
  
 </slide>
 
@@ -372,7 +551,11 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Sentence structure</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li><code>nltk</code> POS tagging tools and examples</li>
+<li>grammar analysis and checking</li>
+<li>using POS to aid in information/knowledge extraction</li>
+</ul></article>
  
 </slide>
 
@@ -382,7 +565,11 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Semantic processing</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>nltk WordNet interface\</li>
+<li>analyze and visualize the semantic network for the participant-supplied text</li>
+<li>use NLTK to populate a simple knowledge base about you based on your hard drive contents</li>
+</ul></article>
  
 </slide>
 

@@ -1,6 +1,7 @@
 
 ---
 title: What is natural language
+
 * a system of utterances invented by humans "spontaneously" over millions of years.
 * unstructured text is a generalization of natural language text and the terms are often used interchangeably
 * natural language is often embedded in structure text (formal languages), like HTML, XML, YAML, SQL, and of course Python as the content of variables, elements, or strings
@@ -12,6 +13,7 @@ title: What is natural language
 
 ---
 title: What is natural language (cont.)
+
 * Notes to yourself: "Don't forget to take Plato for a walk"
 * Chat room correspondence: "OMG dont be sucha troll!!!"
 * Numbers and prices (e.g. "200 pythonistas", "$50K per year", "1 GB")
@@ -24,6 +26,7 @@ title: What is natural language (cont.)
 
 ---
 title: What is natural language processing
+
 * Computer processing of languages to do something useful or fun
 * Story about the genesis of _information theory_ and introduction to concepts Applicable to NLP:
 * entropy
@@ -35,6 +38,7 @@ title: What is natural language processing
 
 ---
 title: Why is natural language processing useful and fun
+
 * Example applications
 * a. sentiment analysis of customer service data (SAP)
 * b. sentiment analysis for trend and finance prediction on twitter and other news feeds (Thomson Reuters)
@@ -46,12 +50,14 @@ title: Why is natural language processing useful and fun
 
 ---
 title: What does artificial intelligence have to do with NLP
+
 * Turing defined it as being able to imitate a human's ability to converse in  natural language text
 * In some ways coding languages, structured text, and data structures, are just a subset or specialization of natural languages (because they are meant to be written and read by humans *AND* machines)
 * semantic processing (state of the art NLP) extracts knowledge or meaning from text
 
 ---
 title: Context:
+
 * what is context
 * why is it important?
 * Some common layers of context and meaning
@@ -63,6 +69,7 @@ title: Context:
 
 ---
 title: Context: (cont.)
+
 * passage (quotes, excerpts)
 * page (text often will refer to images or quotes on the same page, like "see above")
 * section (topics are changed between sections of an article or book)
@@ -75,10 +82,12 @@ title: Context: (cont.)
 
 ---
 title: Context: (cont.)
+
 * planet (yes, projects like SETI are very concerned with NLP of ET languages)
 
 ---
 title: Tools and techniques for identifying "style" or "context"
+
 * Sentiment and mood metrics
 * Style distance metrics for comparison of a text to that of famous authors like Hemmingway, Shakespeare, US presidents,
 * Techniques
@@ -89,10 +98,12 @@ title: Tools and techniques for identifying "style" or "context"
 
 ---
 title: Break
+
 * Will help those having trouble getting the examples so far to work in their environment
 
 ---
 title: Acquiring a Corpus
+
 * using `nltk` to download text corpora (text documents or strings)
 * extracting text and semi-structure text (tables) from web pages using Scrapy and Beautiful Soup
 * encoding issues and python 2 vs 3: what has changed and how to use the best of python 3 with python 2 NLP tools
@@ -102,6 +113,7 @@ title: Acquiring a Corpus
 
 ---
 title: Frequency analysis of US President inaugural speeches
+
 * segmentation/tokenization/parsing
 * characters (encoding issues, some natural languages like Japanese Kanji and Chinese don't have "letters")
 * words
@@ -113,6 +125,7 @@ title: Frequency analysis of US President inaugural speeches
 
 ---
 title: Frequency analysis of US President inaugural speeches (cont.)
+
 * language variations (Spanish, French, slang)
 * bag-of-words counting (frequency analysis) ignores context at any layer above the "documents"
 * agnostic counting
@@ -125,6 +138,7 @@ title: Frequency analysis of US President inaugural speeches (cont.)
 
 ---
 title: Frequency analysis of US President inaugural speeches (cont.)
+
 * occurrence matrices ("word space" or "word vector space" in information theory)
 * uses for word-word, word-document, document-word, and document-document matrices
 * "word space" is a way of giving words a distance metric, from each other as individuals and as collections of words (documents)
@@ -137,6 +151,7 @@ title: Frequency analysis of US President inaugural speeches (cont.)
 
 ---
 title: Frequency analysis of US President inaugural speeches (cont.)
+
 * direct semantic word space (we'll talk about WordNet later)
 * syntactic/gramatical word space (we'll talk about POS tagging later)
 * statistical nltk distance measures/metrics:
@@ -147,6 +162,7 @@ title: Frequency analysis of US President inaugural speeches (cont.)
 
 ---
 title: Dimension reduction
+
 * occurrence matrices will grow to become impractical
 * 100k words/tokens counted across 10k documents = 1 GB of data, if stored efficiently
 * ignoring "stop words" and low-information-content words won't significantly reduce the dimensions
@@ -158,6 +174,7 @@ title: Dimension reduction
 
 ---
 title: Dimension reduction (cont.)
+
 * SVD (PCA) can reduce the dimensions and enable many powerful machine learning algorithms to be employed
 * When SVD is impractical (e.g. 100k x 100k matrices or larger), dimension reduction can be based on the entropy found in each word and document independent of the others
 * ntlk US inaugural presidential speech word-frequency example
@@ -169,6 +186,7 @@ title: Dimension reduction (cont.)
 
 ---
 title: Getting Fuzzy
+
 * regular expressions
 * examples for use in a chat bot
 * examples for use in a crawler for financial information
@@ -180,14 +198,17 @@ title: Getting Fuzzy
 
 ---
 title: Getting Fuzzy (cont.)
+
 * example use in a chatbot (`will`)
 * when you want the very "best match" and you can wait
 
 ---
 title: Break
 
+
 ---
 title: Jargon and typo consolidation
+
 * Tell a story about the need for word consolidation (vocab dimension reduction) at Sharp Electronics to interpret multilingual, jargony, and abbreviation-filled natural language repair technician notes
 * word distance metrics (Levenshtein)
 * which word is the "canonical" form among a list of typos
@@ -199,12 +220,14 @@ title: Jargon and typo consolidation
 
 ---
 title: Parsing structured data to create small , context-specific databases of knowledge for use in NLP information extraction from unstructured text
+
 * extracting tabular data automatically from a web page (using Scrapy)
 * automatic-identification of table "schema" using frequency analysis
 * parsing a natural language database table query and producing a natural language response (i.e. how Wolfram Alpha does it)
 
 ---
 title: Natural language processing of search queries
+
 * composing logical statements from natural language
 * state of the art in semantic parsing of sentences
 * word order to tag words with POS and context
@@ -212,14 +235,17 @@ title: Natural language processing of search queries
 ---
 title: Break
 
+
 ---
 title: Knowledge extraction
+
 * date/time information using python-dateutil
 * `will` example "remind me to knock off at 5"
 * regexes to extract prices
 
 ---
 title: Sentiment analysis to gage chat room "mood"
+
 * Applications of sentiment analysis
 * financial analytic forecasting
 * social network research and traffic/mood manipulation
@@ -231,17 +257,20 @@ title: Sentiment analysis to gage chat room "mood"
 
 ---
 title: Sentiment analysis to gage chat room "mood" (cont.)
+
 * long term "culture" tracking
 * identifying the mood of individual chatroom members
 
 ---
 title: Sentence structure
+
 * `nltk` POS tagging tools and examples
 * grammar analysis and checking
 * using POS to aid in information/knowledge extraction
 
 ---
 title: Semantic processing
+
 * nltk WordNet interface\
 * analyze and visualize the semantic network for the participant-supplied text
 * use NLTK to populate a simple knowledge base about you based on your hard drive contents
