@@ -26,27 +26,40 @@ build_lists: true
 
 
 ---
-title: What is natural language
+title: What is "natural language"
 
-* a system of utterances invented by humans "spontaneously" over millions of years.
-* unstructured text is a generalization of natural language text and the terms are often used interchangeably
-* natural language is often embedded in structure text (formal languages), like HTML, XML, YAML, SQL, and of course Python as the content of variables, elements, or strings
-* Examples (why NLP is challenging):
-* HTML tag contents, e.g. the "PyCon 2015..." in <title>PyCon 2015 in Montréal | April 8th – April 16th</title>
-* A textbook, encyclopedia or Wikipedia articles with headings, page numbers, footnotes, etc
-* A social network feed (twitter, facebook, ), e.g. "Brushed my teeth today"
-* A legal contract, license agreement (EULA), annual report, patent "By checking this box you sign away your rights to sue us."
+* System of symbols and utterances developed by humans over millions of years.
+* Unstructured text is a generalization of natural language text and the terms are often used interchangeably
+* Natural language is often embedded in structured text (formal languages)
+* XML, YAML, SQL, and of course **Python**
+* variables, elements, names, strings, files, streams
+* Example semi-structured, semi-formal language challenges:
+* Parse HTML tag contents
+* When is PyCon?  "<title>PyCon 2015 in Montréal | April 8th – April 16th</title>""
 
 ---
-title: What is natural language (cont.)
+title: What is "natural language" (cont.)
 
-* Notes to yourself: "Don't forget to take Plato for a walk"
-* Chat room correspondence: "OMG dont be sucha troll!!!"
-* Numbers and prices (e.g. "200 pythonistas", "$50K per year", "1 GB")
+* Parse a textbook or Wikipedia article with headings, page numbers, footnotes, etc
+* social network feed (twitter, facebook, ), e.g. "Brushed my teeth today"
+* legal contract, license agreement, EULA, annual report, patent
+* "By checking this box you sign away your rights to sue us."
+* Scrape every other row in an HTML table (e.g. your Facebook page)
+* More challenging, less-standardized NLP
+* Notes to yourself
+* "Don't forget to take Plato for a walk tomorrow"
+* Chat room or forum messages
+
+---
+title: What is "natural language" (cont.)
+
+* "OMG dont be sucha troll!!!"
+* Extract numbers and prices and their "units" of measure
+* "200 pythonistas", "$50K per year", "1 GB"
 * Nonexamples
-* HTML and CSS tags
+* and CSS tags
 * python script (but some strings within it may be NL)
-* A CSV file (but some strings within the fields may be NL)
+* file (but some strings within the fields may be NL)
 * mathematical equations (but the integers and fractions within it can be processed as NL)
 * a database (but the names of the fields and tables may be processed as NL)
 
@@ -63,6 +76,12 @@ title: What is natural language processing
 * channel capacity
 
 ---
+title: What is natural language processing (cont.)
+
+* distance metrics
+* dimensionality
+
+---
 title: Why is natural language processing useful and fun
 
 * Example applications
@@ -75,17 +94,18 @@ title: Why is natural language processing useful and fun
 * f. example processing of memoirs for psychoanalysis: Stephen Fry's autobiography and its [open API + metadata](http://yourfry.com/)
 
 ---
-title: What does artificial intelligence have to do with NLP
+title: Is NLP related to AI?
 
 * Turing defined it as being able to imitate a human's ability to converse in  natural language text
 * In some ways coding languages, structured text, and data structures, are just a subset or specialization of natural languages (because they are meant to be written and read by humans *AND* machines)
 * semantic processing (state of the art NLP) extracts knowledge or meaning from text
+* Speech recognition + NLP can often produce effective AI (e.g. Liza 2.0)
 
 ---
 title: Context:
 
-* what is context
-* why is it important?
+* What is _context_?
+* Why is it important?
 * Some common layers of context and meaning
 * word (the "meaning" of syllables depends on the word they are used in)
 * compound word ("boot" means something different in "bootstrap" and "boot up")
@@ -112,6 +132,34 @@ title: Context: (cont.)
 * planet (yes, projects like SETI are very concerned with NLP of ET languages)
 
 ---
+title: Teasers: Algorithms Behind Some Popular NLP Packages
+
+* sluggify.sluggify
+* Foundation: str.split(), str.strip(), str.replace()
+* Uses: Django url composition
+* slugify(u"Awesome:*lol*resume'=B", max_length=15, word_boundary=True)
+* 'awesome-lol-b'
+* dateutils.parser.parse
+* Foundation: Regular expressions
+* Uses: Google Calendar, Remember The Milk
+
+---
+title: Teasers: Algorithms Behind Some Popular NLP Packages (cont.)
+
+* parse('fri')
+* datetime.datetime(2015, 4, 10, 0, 0)
+* fuzzywuzzy.process
+* Foundation: Levenshtein Edit Distance, `difflib`
+* Uses: Building Energy data ETL
+* process.extractOne("mess with", ["nuke", "talk", "surrender"])[0]
+* ('talk', 29)
+
+---
+title: Break
+
+* Available to help "offline"
+
+---
 title: Tools and techniques for identifying "style" or "context"
 
 * Sentiment and mood metrics
@@ -121,11 +169,6 @@ title: Tools and techniques for identifying "style" or "context"
 * vocabulary statistics relative to "standard vocabularies" or age-group vocabularies from education material
 * vacabulary evolution over the course of a document
 * structure (vocabulary shifts within a document for each of the context layers discussed previously)
-
----
-title: Break
-
-* Will help those having trouble getting the examples so far to work in their environment
 
 ---
 title: Acquiring a Corpus
@@ -171,9 +214,9 @@ title: Frequency analysis of US President inaugural speeches (cont.)
 * Leventshtein distance
 * Distance
 * statistical (frequency) word space
-* nltk.metrics.distance.jaccard_distance
-* nltk.metrics.distance.masi_distance
-* nltk.metrics.distance.presence
+* `nltk.metrics.distance.jaccard_distance`
+* `nltk.metrics.distance.masi_distance`
+* `nltk.metrics.distance.presence`
 
 ---
 title: Frequency analysis of US President inaugural speeches (cont.)
@@ -201,7 +244,7 @@ title: Dimension reduction
 ---
 title: Dimension reduction (cont.)
 
-* SVD (PCA) can reduce the dimensions and enable many powerful machine learning algorithms to be employed
+* can reduce the dimensions and enable many powerful machine learning algorithms to be employed
 * When SVD is impractical (e.g. 100k x 100k matrices or larger), dimension reduction can be based on the entropy found in each word and document independent of the others
 * ntlk US inaugural presidential speech word-frequency example
 * raw occurrence matrices
@@ -211,13 +254,18 @@ title: Dimension reduction (cont.)
 * as graphs or networks (D3 force-directed graph)
 
 ---
+title: Break
+
+* Available to help "offline"
+
+---
 title: Getting Fuzzy
 
 * regular expressions
 * examples for use in a chat bot
 * examples for use in a crawler for financial information
 * what they're good at (semi-structured text) and what their not good for (not robust/reliable)
-* fuzzywuzzy (uses "quick" Levenshtein distance)
+* `fuzzywuzzy` (uses "quick" Levenshtein distance)
 * examples for matching database table/column names
 * when you need the "best" match and you need it fast
 * fuzzy regular expressions (`regex` package)
@@ -227,10 +275,6 @@ title: Getting Fuzzy (cont.)
 
 * example use in a chatbot (`will`)
 * when you want the very "best match" and you can wait
-
----
-title: Break
-
 
 ---
 title: Jargon and typo consolidation
@@ -261,6 +305,7 @@ title: Natural language processing of search queries
 ---
 title: Break
 
+* Available to help "offline"
 
 ---
 title: Knowledge extraction
@@ -270,7 +315,7 @@ title: Knowledge extraction
 * regexes to extract prices
 
 ---
-title: Sentiment analysis to gage chat room "mood"
+title: Sentiment analysis to gauge chat room "mood"
 
 * Applications of sentiment analysis
 * financial analytic forecasting
@@ -282,7 +327,7 @@ title: Sentiment analysis to gage chat room "mood"
 * gage the mood and civility of your chat room
 
 ---
-title: Sentiment analysis to gage chat room "mood" (cont.)
+title: Sentiment analysis to gauge chat room "mood" (cont.)
 
 * long term "culture" tracking
 * identifying the mood of individual chatroom members
@@ -297,7 +342,7 @@ title: Sentence structure
 ---
 title: Semantic processing
 
-* nltk WordNet interface\
+* `nltk` <-> `WordNet` interface
 * analyze and visualize the semantic network for the participant-supplied text
 * use NLTK to populate a simple knowledge base about you based on your hard drive contents
 
@@ -305,12 +350,12 @@ title: Semantic processing
 title: Metadata
 
 
-* Lines: 189
-* Pages: 30
-* Tokens: 2045
-* Sentences: 21
-* Vocabulary: 728
-* Time: 4:24
+* Lines: 222
+* Pages: 34
+* Tokens: 2275
+* Sentences: 27
+* Vocabulary: 788
+* Time: 4:25
 
 ---
 title: Contributors

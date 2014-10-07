@@ -99,18 +99,18 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
-      <h2>What is natural language</h2>
+      <h2>What is "natural language"</h2>
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>a system of utterances invented by humans "spontaneously" over millions of years.</li>
-<li>unstructured text is a generalization of natural language text and the terms are often used interchangeably</li>
-<li>natural language is often embedded in structure text (formal languages), like HTML, XML, YAML, SQL, and of course Python as the content of variables, elements, or strings</li>
-<li>Examples (why NLP is challenging):</li>
-<li>HTML tag contents, e.g. the "PyCon 2015..." in <title>PyCon 2015 in Montréal | April 8th – April 16th</title></li>
-<li>A textbook, encyclopedia or Wikipedia articles with headings, page numbers, footnotes, etc</li>
-<li>A social network feed (twitter, facebook, ), e.g. "Brushed my teeth today"</li>
-<li>A legal contract, license agreement (EULA), annual report, patent "By checking this box you sign away your rights to sue us."</li>
+<li>System of symbols and utterances developed by humans over millions of years.</li>
+<li>Unstructured text is a generalization of natural language text and the terms are often used interchangeably</li>
+<li>Natural language is often embedded in structured text (formal languages)</li>
+<li>XML, YAML, SQL, and of course <strong>Python</strong></li>
+<li>variables, elements, names, strings, files, streams</li>
+<li>Example semi-structured, semi-formal language challenges:</li>
+<li>Parse HTML tag contents</li>
+<li>When is PyCon?  "<title>PyCon 2015 in Montréal | April 8th – April 16th</title>""</li>
 </ul></article>
  
 </slide>
@@ -118,17 +118,37 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
-      <h2>What is natural language (cont.)</h2>
+      <h2>What is "natural language" (cont.)</h2>
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>Notes to yourself: "Don't forget to take Plato for a walk"</li>
-<li>Chat room correspondence: "OMG dont be sucha troll!!!"</li>
-<li>Numbers and prices (e.g. "200 pythonistas", "$50K per year", "1 GB")</li>
+<li>Parse a textbook or Wikipedia article with headings, page numbers, footnotes, etc</li>
+<li>social network feed (twitter, facebook, ), e.g. "Brushed my teeth today"</li>
+<li>legal contract, license agreement, EULA, annual report, patent</li>
+<li>"By checking this box you sign away your rights to sue us."</li>
+<li>Scrape every other row in an HTML table (e.g. your Facebook page)</li>
+<li>More challenging, less-standardized NLP</li>
+<li>Notes to yourself</li>
+<li>"Don't forget to take Plato for a walk tomorrow"</li>
+<li>Chat room or forum messages</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>What is "natural language" (cont.)</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>"OMG dont be sucha troll!!!"</li>
+<li>Extract numbers and prices and their "units" of measure</li>
+<li>"200 pythonistas", "$50K per year", "1 GB"</li>
 <li>Nonexamples</li>
-<li>HTML and CSS tags</li>
+<li>and CSS tags</li>
 <li>python script (but some strings within it may be NL)</li>
-<li>A CSV file (but some strings within the fields may be NL)</li>
+<li>file (but some strings within the fields may be NL)</li>
 <li>mathematical equations (but the integers and fractions within it can be processed as NL)</li>
 <li>a database (but the names of the fields and tables may be processed as NL)</li>
 </ul></article>
@@ -157,6 +177,19 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
+      <h2>What is natural language processing (cont.)</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>distance metrics</li>
+<li>dimensionality</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
       <h2>Why is natural language processing useful and fun</h2>
       <h3></h3>
     </hgroup>
@@ -176,13 +209,14 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
-      <h2>What does artificial intelligence have to do with NLP</h2>
+      <h2>Is NLP related to AI?</h2>
       <h3></h3>
     </hgroup>
     <article ><ul>
 <li>Turing defined it as being able to imitate a human's ability to converse in  natural language text</li>
 <li>In some ways coding languages, structured text, and data structures, are just a subset or specialization of natural languages (because they are meant to be written and read by humans <em>AND</em> machines)</li>
 <li>semantic processing (state of the art NLP) extracts knowledge or meaning from text</li>
+<li>Speech recognition + NLP can often produce effective AI (e.g. Liza 2.0)</li>
 </ul></article>
  
 </slide>
@@ -194,8 +228,8 @@ URL: https://code.google.com/p/io-2012-slides
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>what is context</li>
-<li>why is it important?</li>
+<li>What is <em>context</em>?</li>
+<li>Why is it important?</li>
 <li>Some common layers of context and meaning</li>
 <li>word (the "meaning" of syllables depends on the word they are used in)</li>
 <li>compound word ("boot" means something different in "bootstrap" and "boot up")</li>
@@ -241,17 +275,36 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
-      <h2>Tools and techniques for identifying "style" or "context"</h2>
+      <h2>Teasers: Algorithms Behind Some Popular NLP Packages</h2>
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>Sentiment and mood metrics</li>
-<li>Style distance metrics for comparison of a text to that of famous authors like Hemmingway, Shakespeare, US presidents,</li>
-<li>Techniques</li>
-<li>vocabulary breadth</li>
-<li>vocabulary statistics relative to "standard vocabularies" or age-group vocabularies from education material</li>
-<li>vacabulary evolution over the course of a document</li>
-<li>structure (vocabulary shifts within a document for each of the context layers discussed previously)</li>
+<li>sluggify.sluggify</li>
+<li>Foundation: str.split(), str.strip(), str.replace()</li>
+<li>Uses: Django url composition</li>
+<li>slugify(u"Awesome:<em>lol</em>resume'=B", max_length=15, word_boundary=True)</li>
+<li>'awesome-lol-b'</li>
+<li>dateutils.parser.parse</li>
+<li>Foundation: Regular expressions</li>
+<li>Uses: Google Calendar, Remember The Milk</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Teasers: Algorithms Behind Some Popular NLP Packages (cont.)</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>parse('fri')</li>
+<li>datetime.datetime(2015, 4, 10, 0, 0)</li>
+<li>fuzzywuzzy.process</li>
+<li>Foundation: Levenshtein Edit Distance, <code>difflib</code></li>
+<li>Uses: Building Energy data ETL</li>
+<li>process.extractOne("mess with", ["nuke", "talk", "surrender"])[0]</li>
+<li>('talk', 29)</li>
 </ul></article>
  
 </slide>
@@ -263,7 +316,25 @@ URL: https://code.google.com/p/io-2012-slides
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>Will help those having trouble getting the examples so far to work in their environment</li>
+<li>Available to help "offline"</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Tools and techniques for identifying "style" or "context"</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>Sentiment and mood metrics</li>
+<li>Style distance metrics for comparison of a text to that of famous authors like Hemmingway, Shakespeare, US presidents,</li>
+<li>Techniques</li>
+<li>vocabulary breadth</li>
+<li>vocabulary statistics relative to "standard vocabularies" or age-group vocabularies from education material</li>
+<li>vacabulary evolution over the course of a document</li>
+<li>structure (vocabulary shifts within a document for each of the context layers discussed previously)</li>
 </ul></article>
  
 </slide>
@@ -337,9 +408,9 @@ URL: https://code.google.com/p/io-2012-slides
 <li>Leventshtein distance</li>
 <li>Distance</li>
 <li>statistical (frequency) word space</li>
-<li>nltk.metrics.distance.jaccard_distance</li>
-<li>nltk.metrics.distance.masi_distance</li>
-<li>nltk.metrics.distance.presence</li>
+<li><code>nltk.metrics.distance.jaccard_distance</code></li>
+<li><code>nltk.metrics.distance.masi_distance</code></li>
+<li><code>nltk.metrics.distance.presence</code></li>
 </ul></article>
  
 </slide>
@@ -388,7 +459,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>SVD (PCA) can reduce the dimensions and enable many powerful machine learning algorithms to be employed</li>
+<li>can reduce the dimensions and enable many powerful machine learning algorithms to be employed</li>
 <li>When SVD is impractical (e.g. 100k x 100k matrices or larger), dimension reduction can be based on the entropy found in each word and document independent of the others</li>
 <li>ntlk US inaugural presidential speech word-frequency example</li>
 <li>raw occurrence matrices</li>
@@ -396,6 +467,18 @@ URL: https://code.google.com/p/io-2012-slides
 <li>d3 visualizations of occurrence matrices</li>
 <li>as "checkerboard" grids or heat-maps</li>
 <li>as graphs or networks (D3 force-directed graph)</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Break</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>Available to help "offline"</li>
 </ul></article>
  
 </slide>
@@ -411,7 +494,7 @@ URL: https://code.google.com/p/io-2012-slides
 <li>examples for use in a chat bot</li>
 <li>examples for use in a crawler for financial information</li>
 <li>what they're good at (semi-structured text) and what their not good for (not robust/reliable)</li>
-<li>fuzzywuzzy (uses "quick" Levenshtein distance)</li>
+<li><code>fuzzywuzzy</code> (uses "quick" Levenshtein distance)</li>
 <li>examples for matching database table/column names</li>
 <li>when you need the "best" match and you need it fast</li>
 <li>fuzzy regular expressions (<code>regex</code> package)</li>
@@ -429,16 +512,6 @@ URL: https://code.google.com/p/io-2012-slides
 <li>example use in a chatbot (<code>will</code>)</li>
 <li>when you want the very "best match" and you can wait</li>
 </ul></article>
- 
-</slide>
-
-<slide  >
-  
-    <hgroup>
-      <h2>Break</h2>
-      <h3></h3>
-    </hgroup>
-    <article ></article>
  
 </slide>
 
@@ -495,7 +568,9 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Break</h2>
       <h3></h3>
     </hgroup>
-    <article ></article>
+    <article ><ul>
+<li>Available to help "offline"</li>
+</ul></article>
  
 </slide>
 
@@ -516,7 +591,7 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
-      <h2>Sentiment analysis to gage chat room "mood"</h2>
+      <h2>Sentiment analysis to gauge chat room "mood"</h2>
       <h3></h3>
     </hgroup>
     <article ><ul>
@@ -535,7 +610,7 @@ URL: https://code.google.com/p/io-2012-slides
 <slide  >
   
     <hgroup>
-      <h2>Sentiment analysis to gage chat room "mood" (cont.)</h2>
+      <h2>Sentiment analysis to gauge chat room "mood" (cont.)</h2>
       <h3></h3>
     </hgroup>
     <article ><ul>
@@ -566,7 +641,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>nltk WordNet interface\</li>
+<li><code>nltk</code> &lt;-&gt; <code>WordNet</code> interface</li>
 <li>analyze and visualize the semantic network for the participant-supplied text</li>
 <li>use NLTK to populate a simple knowledge base about you based on your hard drive contents</li>
 </ul></article>
@@ -580,12 +655,12 @@ URL: https://code.google.com/p/io-2012-slides
       <h3></h3>
     </hgroup>
     <article ><ul>
-<li>Lines: 189</li>
-<li>Pages: 30</li>
-<li>Tokens: 2045</li>
-<li>Sentences: 21</li>
-<li>Vocabulary: 728</li>
-<li>Time: 4:24</li>
+<li>Lines: 222</li>
+<li>Pages: 34</li>
+<li>Tokens: 2275</li>
+<li>Sentences: 27</li>
+<li>Vocabulary: 788</li>
+<li>Time: 4:25</li>
 </ul></article>
  
 </slide>
